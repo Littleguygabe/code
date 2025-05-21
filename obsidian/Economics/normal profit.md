@@ -1,0 +1,1 @@
+Normal profit is the profit needed for a firm to stay in a [[market]] / not go bust

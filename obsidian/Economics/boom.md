@@ -1,0 +1,1 @@
+a period of economic upturn that lasts 2 or more quarters

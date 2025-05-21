@@ -1,0 +1,1 @@
+a set of rules, normally imposed by government, that seeks to modify or determine the behaviour of firms or organisations

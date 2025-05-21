@@ -1,0 +1,8 @@
+	SWI	0
+	SWI	1
+	SWI	2
+	SWI	3
+	SWI	4
+
+
+	SWI	0xDECAFF

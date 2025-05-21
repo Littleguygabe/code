@@ -1,0 +1,1 @@
+a direct or indirect payment to individuals or firms, usually in the form of a cash payment from the government or a targeted tax cut

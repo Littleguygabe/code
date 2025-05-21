@@ -1,0 +1,1 @@
+Industry that is concerned with the manufacturing of goods and services from raw resources provided from the [[primary sector]]

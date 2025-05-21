@@ -1,0 +1,1 @@
+Strategy is the blueprint of decisions within an organisation that show its goals and objectives and how they are going to reach them

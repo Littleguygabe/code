@@ -1,0 +1,1 @@
+Consumers determine through purchases what goods and services will be produced.

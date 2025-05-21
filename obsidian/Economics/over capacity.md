@@ -1,0 +1,1 @@
+A state where a firm produces more goods than a market can handle

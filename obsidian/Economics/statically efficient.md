@@ -1,0 +1,1 @@
+the condition in which the economy cannot increase the production of one good without decreasing the production of another good.

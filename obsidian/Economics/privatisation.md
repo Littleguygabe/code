@@ -1,0 +1,1 @@
+where an enterprise in public ownership is returned to private ownership

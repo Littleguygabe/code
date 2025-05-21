@@ -1,0 +1,1 @@
+occurs when total output is either declining, flat or growing slowly

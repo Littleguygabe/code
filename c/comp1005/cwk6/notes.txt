@@ -1,0 +1,13 @@
+memory error at:
+    >385/4 -> temp frame allocated
+    >296 -> templex allocated at 293 is pushed to the queue
+    >293 -> templex allocation
+    >323 -> templex allocation within a loop
+        all mallocs not being freed
+
+cur issue:
+    sanity checks in task 1
+    memory leaks in task 1
+
+    sanity checks for task 2
+    memory leaks in task 2

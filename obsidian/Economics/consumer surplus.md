@@ -1,0 +1,1 @@
+when the price that consumers pay for a product or service is less than the price they're willing to pay

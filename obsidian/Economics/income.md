@@ -1,0 +1,1 @@
+Flow of money earned by the [[factors of production]]

@@ -1,0 +1,1 @@
+If a worker can earn a greater wage in another industry they will shift to that industry and cause a left shift in the supply of labour curve

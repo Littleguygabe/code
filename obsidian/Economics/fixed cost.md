@@ -1,0 +1,1 @@
+A cost that does change when sales or production volume increases or decreases

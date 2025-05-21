@@ -1,0 +1,1 @@
+Giving a buyer discounts if it buys other products from the firm

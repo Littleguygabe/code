@@ -1,0 +1,103 @@
+KMD
+00000000: EA000006    ;                 B       test_rmvwls
+00000004:             ; 
+00000004: 48 45 4C 4C ; trv_string      DEFB    "HELLO WORLD",0
+00000008: 4F 20 57 4F ; 
+0000000C: 52 4C 44 00 ; 
+00000010: 27 20 62 65 ; trv_becomes     DEFB    "' becomes '",0
+00000014: 63 6F 6D 65 ; 
+00000018: 73 20 27 00 ; 
+0000001C: 27 0A 00    ; trv_eol         DEFB    "'\n",0
+0000001F:             ; 
+00000020:             ;                 ALIGN
+00000020:             ; 
+00000020:             ; ;; Do not modify this test code here, insert your code at strcpy below...
+00000020:             ; test_rmvwls
+00000020: E3A0D801    ;                 MOV             R13,#0x10000
+00000024:             ; 
+00000024: E3A00027    ;                 MOV             R0,#39
+00000028: EF000000    ;                 SWI             0
+0000002C: E24F0030    ;                 ADRL    R0,trv_string
+00000030: EF000003    ;                 SWI             3
+00000034:             ; 
+00000034: E24F002C    ;                 ADRL    R0,trv_becomes
+00000038: EF000003    ;                 SWI             3
+0000003C:             ; 
+0000003C: E24F0040    ;                 ADRL    R0,trv_string
+00000040: EB000004    ;                 BL              RemoveVowels
+00000044:             ; 
+00000044: E24F0048    ;                 ADRL    R0,trv_string
+00000048: EF000003    ;                 SWI             3
+0000004C:             ; 
+0000004C: E24F0038    ;                 ADRL    R0,trv_eol
+00000050: EF000003    ;                 SWI             3
+00000054:             ; 
+00000054: EF000002    ;                 SWI             2
+00000058:             ; 
+00000058:             ; 
+00000058:             ; ;; The line below copies your isVowel subroutine into this file automatically
+00000058:             ; ;; IT IS NOT NECESSARY TO COPY THE SUBROUTINE MANUALLY
+00000058:             ; 
+00000058:             ; ;; RemoveVowels -- remove any vowels in the string at R0 using the isVowel subroutine to identi
+                      ; fy vowels
+00000058:             ; ;; R0 <-- string
+00000058:             ; 
+00000058:             ; RemoveVowels
+00000058: E1A02000    ;     MOV R2, R0          ; Source pointer (start of the input string)
+0000005C: E1A03000    ;     MOV R3, R0          ; Destination pointer (start of the output string)
+00000060:             ; 
+00000060:             ; loop
+00000060: E5520000    ;     LDRB R0, [R2]       ; Load the current character into R0
+00000064: E3500000    ;     CMP R0, #0          ; Check if the character is the null terminator
+00000068: 0A000004    ;     BEQ end             ; If it is, exit the loop
+0000006C:             ; 
+0000006C: E92D0001    ;     PUSH {R0}           ; Save R0 (current character) on the stack
+00000070: EB000003    ;     BL isVowellocal     ; Call isVowellocal to check if the character is a vowel
+00000074: E8BD0001    ;     POP {R0}            ; Restore R0 (original character) from the stack
+00000078:             ; 
+00000078: E2822001    ;     ADD R2, R2, #1      ; Increment source pointer
+0000007C: EAFFFFF7    ;     B loop              ; Repeat the loop
+00000080:             ; 
+00000080:             ; end
+00000080: E12FFF1E    ;     BX LR               ; Return from the subroutine
+00000084:             ; 
+00000084:             ; 
+00000084:             ; isVowellocal
+00000084:             ; ;; Insert your code here
+00000084: E3A01041    ;         MOV R1,#'A'
+00000088: E1500001    ;         CMP R0,R1
+0000008C: 0A00000D    ;         BEQ confirmVowel
+00000090:             ; 
+00000090: E3A01045    ;         MOV R1,#'E'
+00000094: E1500001    ;         CMP R0,R1
+00000098: 0A00000A    ;         BEQ confirmVowel
+0000009C:             ; 
+0000009C: E3A01049    ;         MOV R1,#'I'
+000000A0: E1500001    ;         CMP R0,R1
+000000A4: 0A000007    ;         BEQ confirmVowel
+000000A8:             ; 
+000000A8: E3A0104F    ;         MOV R1,#'O'
+000000AC: E1500001    ;         CMP R0,R1
+000000B0: 0A000004    ;         BEQ confirmVowel
+000000B4:             ; 
+000000B4: E3A01055    ;         MOV R1,#'U'
+000000B8: E1500001    ;         CMP R0,R1
+000000BC: 0A000001    ;         BEQ confirmVowel
+000000C0:             ; 
+000000C0: E3A01000    ;         MOV R1,#0
+000000C4: E12FFF1E    ;         BX LR
+000000C8:             ; 
+000000C8:             ; confirmVowel
+000000C8: E3A01001    ;         MOV R1,#1
+000000CC: E12FFF1E    ;         BX LR
+
+Symbol Table: Labels
+: trv_string                        00000004  Local -- ARM
+: trv_becomes                       00000010  Local -- ARM
+: trv_eol                           0000001C  Local -- ARM
+: test_rmvwls                       00000020  Local -- ARM
+: RemoveVowels                      00000058  Local -- ARM
+: loop                              00000060  Local -- ARM
+: end                               00000080  Local -- ARM
+: isVowellocal                      00000084  Local -- ARM
+: confirmVowel                      000000C8  Local -- ARM

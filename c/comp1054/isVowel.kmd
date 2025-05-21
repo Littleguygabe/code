@@ -1,0 +1,84 @@
+KMD
+00000000: EA000006    ;                 B       test_isvowel
+00000004:             ; 
+00000004: 41 42 43 44 ; tsv_vowel       DEFB    "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+00000008: 45 46 47 48 ; 
+0000000C: 49 4A 4B 4C ; 
+00000010: 4D 4E 4F 50 ; 
+00000014: 51 52 53 54 ; 
+00000018: 55 56 57 58 ; 
+0000001C: 59 5A       ; 
+0000001E:             ; 
+00000020:             ;                 ALIGN
+00000020:             ; 
+00000020:             ; ;; Do not modify this test code here, insert your code at strcpy below...
+00000020:             ; test_isvowel
+00000020: E3A0D801    ;                 MOV             R13,#0x10000
+00000024:             ; 
+00000024: E24F4028    ;                 ADRL    R4,tsv_vowel
+00000028: E3A0501A    ;                 MOV             R5,#26
+0000002C:             ; tsv_loop
+0000002C: E4D46001    ;                 LDRB    R6, [R4],#1
+00000030: E1A00006    ;                 MOV             R0, R6
+00000034: EF000000    ;                 SWI             0
+00000038:             ; 
+00000038: E3A00020    ;                 MOV             R0,#32
+0000003C: EF000000    ;                 SWI             0
+00000040:             ;                 
+00000040: E1A00006    ;                 MOV             R0,R6
+00000044: EB000006    ;                 BL              isVowel
+00000048: EF000004    ;                 SWI             4
+0000004C:             ; 
+0000004C: E3A0000A    ;                 MOV             R0,#10
+00000050: EF000000    ;                 SWI             0
+00000054: E2455001    ;                 SUB             R5,R5,#1
+00000058: E3550000    ;                 CMP             R5,#0
+0000005C: CAFFFFF2    ;                 BGT             tsv_loop
+00000060:             ; 
+00000060: EF000002    ;                 SWI             2
+00000064:             ; 
+00000064:             ; 
+00000064:             ; ;; isVowel -- test whether character in R0 is a vowel or not
+00000064:             ; ;; R0 <--- character
+00000064:             ; ;; Returns in  R0: 1 if R0 contained a vowel, 0 otherwise
+00000064:             ; 
+00000064:             ; isVowel
+00000064:             ; ;; Insert your code here
+00000064: E3A01041    ;         MOV R1,#'A'
+00000068: E1500001    ;         CMP R0,R1
+0000006C: 0A00000D    ;         BEQ confirmVowel
+00000070:             ; 
+00000070: E3A01045    ;         MOV R1,#'E'
+00000074: E1500001    ;         CMP R0,R1
+00000078: 0A00000A    ;         BEQ confirmVowel
+0000007C:             ; 
+0000007C: E3A01049    ;         MOV R1,#'I'
+00000080: E1500001    ;         CMP R0,R1
+00000084: 0A000007    ;         BEQ confirmVowel
+00000088:             ; 
+00000088: E3A0104F    ;         MOV R1,#'O'
+0000008C: E1500001    ;         CMP R0,R1
+00000090: 0A000004    ;         BEQ confirmVowel
+00000094:             ; 
+00000094: E3A01055    ;         MOV R1,#'U'
+00000098: E1500001    ;         CMP R0,R1
+0000009C: 0A000001    ;         BEQ confirmVowel
+000000A0:             ; 
+000000A0: E3A00000    ;         MOV R0,#0
+000000A4: E12FFF1E    ;         BX LR
+000000A8:             ; 
+000000A8:             ; confirmVowel
+000000A8: E3A00001    ;         MOV R0,#1
+000000AC: E12FFF1E    ;         BX LR
+000000B0:             ; 
+000000B0:             ; 
+000000B0:             ; 
+000000B0:             ; 
+000000B0:             ; 
+
+Symbol Table: Labels
+: tsv_vowel                         00000004  Local -- ARM
+: test_isvowel                      00000020  Local -- ARM
+: tsv_loop                          0000002C  Local -- ARM
+: isVowel                           00000064  Local -- ARM
+: confirmVowel                      000000A8  Local -- ARM

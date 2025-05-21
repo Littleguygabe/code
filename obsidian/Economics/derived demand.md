@@ -1,0 +1,1 @@
+demand for a factor of production or intermediate good that occurs as a result of the demand for another intermediate good or a final good

@@ -1,0 +1,1 @@
+If a firm has a couple of goods which are market leaders but has other goods that are selling it may only allow the buyer access to the market leaders if it buys some of the inferior goods

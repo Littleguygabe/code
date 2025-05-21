@@ -1,0 +1,1 @@
+refers to the amount of money an individual or household has available for spending and saving after taxes and other mandatory deductions have been taken out of their total income.

@@ -1,0 +1,17 @@
+CHIP ZeroOrIn
+{
+	IN in[8], z;
+	OUT out[8];
+PARTS:
+    Not(in=z,out=notZ);
+
+    Mux(a=in[0],b=0,sel=notZ,out=out[0]);
+    Mux(a=in[1],b=0,sel=notZ,out=out[1]);
+    Mux(a=in[2],b=0,sel=notZ,out=out[2]);
+    Mux(a=in[3],b=0,sel=notZ,out=out[3]);
+    Mux(a=in[4],b=0,sel=notZ,out=out[4]);
+    Mux(a=in[5],b=0,sel=notZ,out=out[5]);
+    Mux(a=in[6],b=0,sel=notZ,out=out[6]);
+    Mux(a=in[7],b=0,sel=notZ,out=out[7]);
+
+}

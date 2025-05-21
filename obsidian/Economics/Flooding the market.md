@@ -1,0 +1,1 @@
+Where a producer or a group of producers drastically increases supply of a good or service in a market in an attempt to drive down market price

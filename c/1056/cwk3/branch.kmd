@@ -1,0 +1,22 @@
+
+KMD
+00000000:             ; ;; Branch examples
+00000000: E12FFF10    ;         B forwards              ; This should be positive
+00000004: EAFFFFFE    ; self    B       self
+00000008:             ; 
+00000008: EB000002    ; l2      B some_func
+0000000C: EAFFFFFD    ; forwards        B l2            ; This should be negative 
+00000010:             ; 
+00000010: EAFFFFFB    ;         B       self            ; this will have a different opcode since instruction is in a d
+                      ; ifferent relative place
+00000014: EAFFFFFA    ;         B       self            ; as will this one
+00000018:             ; 
+00000018:             ; some_func
+00000018: E1A0F00E    ;         MOV     PC,R14
+0000001C:             ; 
+0000001C:             ; 
+Symbol Table: Labels
+: self                              00000004  Local -- ARM
+: l2                                00000008  Local -- ARM
+: forwards                          0000000C  Local -- ARM
+: some_func                         00000018  Local -- ARM

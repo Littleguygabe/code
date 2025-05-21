@@ -1,0 +1,1 @@
+the amount that a consumer spend in a given time period

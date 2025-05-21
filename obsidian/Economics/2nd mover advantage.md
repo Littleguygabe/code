@@ -1,0 +1,1 @@
+occurs when it pays to wait and see what new strategies are launched by rivals and then try to improve on them of find ways to undermine them

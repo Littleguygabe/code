@@ -1,0 +1,1 @@
+tends towards the equilibrium but never reaches it

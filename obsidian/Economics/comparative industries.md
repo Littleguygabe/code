@@ -1,0 +1,1 @@
+Industries that are similar to one-another so workers have transferrable skills allowing them to switch between jobs freely

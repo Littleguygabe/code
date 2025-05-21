@@ -1,0 +1,1 @@
+The ability for one economy to competitively trade with another countries economy

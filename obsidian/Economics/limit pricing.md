@@ -1,0 +1,1 @@
+An anti - competition strategy employed through reducing the level of [[supernormal profit]] made in a market so low that it is un-attractive to new firms looking to enter the market

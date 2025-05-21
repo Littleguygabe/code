@@ -1,0 +1,1 @@
+in an oligopoly it can be rewarding to move first because it can generate head-start profits.

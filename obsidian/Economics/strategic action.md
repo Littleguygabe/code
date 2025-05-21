@@ -1,0 +1,1 @@
+projects or programs outside of an organization's day-to-day operational. activities that are meant to help the organization achieve its strategy

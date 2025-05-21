@@ -1,0 +1,1 @@
+prices changes depending up the quantity sold

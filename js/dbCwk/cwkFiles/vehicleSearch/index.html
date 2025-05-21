@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Search</title>
+    <script src="../header/headerLogic.js" defer></script>
+    <script src="src.js" defer type="module"></script>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div id="container">
+
+       
+        <header>
+            <h1>Add a Vehicle</h1>
+            <nav id="homePageNav">
+                <ul class="navBar">
+                    <li class="navBarBut" id="peopleNavBut"><a href="../peopleSearch/index.html"><h2>People Search</h2></a></li>
+                    <li class="navBarBut" id="vehicleNavBut"><h2>Vehicle Search</h2></li>
+                    <li class="navBarBut" id="addVehicleNavBut"><a href="../addAVehicle/index.html"><h2>Add a Vehicle</h2></a></li>
+                </ul>
+            </nav>
+        </header>
+ 
+        <aside>
+            <img src="../images/car-search.png" alt="A man reaching into his car">
+        </aside>
+        
+        <main>
+            <div class="flex-container">
+                <label for="rego">Enter Vehicle Registration:</label>
+                <input type="text" class="entryBox" id="rego">
+                <button id="regoSearchButton">Submit</button>
+            </div>
+            
+            <h2>Search Results</h2>
+            <div id="message"></div>
+            <div id="results"></div>
+        </main>
+        
+        <footer>
+            <p>
+                Designed by <strong>Gabriel Bridger - 20686810</strong>
+            </p>
+        </footer>
+    </div>
+        
+
+</body>
+</html>
+

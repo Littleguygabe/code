@@ -1,0 +1,1 @@
+mandatory contributions levied on individuals or businesses by a government entity 

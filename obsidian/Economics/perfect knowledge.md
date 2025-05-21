@@ -1,0 +1,1 @@
+a theoretical concept which occurs when all consumers in a market are fully aware of price, quantity available and other relevant information for all products when making buying decisions

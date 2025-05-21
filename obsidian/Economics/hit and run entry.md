@@ -1,0 +1,1 @@
+where a firm enters a market to take short-term [[supernormal profit]] knowing it can exit without incurring costs

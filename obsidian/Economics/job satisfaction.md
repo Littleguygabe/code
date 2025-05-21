@@ -1,0 +1,1 @@
+a feeling of fulfilment or enjoyment a person derives from their job.

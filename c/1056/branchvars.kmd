@@ -1,0 +1,13 @@
+KMD
+00000000: BA000001    ;     BLT hello
+00000004: CA000001    ;     BGT goodbye
+00000008: 1A000001    ;     BNE what
+0000000C: EF000002    ; hello SWI 2
+00000010: EAFFFFFD    ; goodbye B hello
+00000014: EAFFFFFD    ; what B goodbye
+00000018:             ; 
+
+Symbol Table: Labels
+: hello                             0000000C  Local -- ARM
+: goodbye                           00000010  Local -- ARM
+: what                              00000014  Local -- ARM

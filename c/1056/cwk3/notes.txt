@@ -1,0 +1,45 @@
+instr contrains the opcode -> unsigned int
+    create a pnuemonic from the opcode
+
+*decodeStr is where the final pnuemonic is stored
+
+sign extend extends the binary number to be made of N many bits
+
+isolate certain bits
+    to find out what type of instruction it is
+    then based on the type of instruction process further with the other bits  
+        so basically have a bunch of other functions that will decode from specificied commands
+
+    do using bitwise operations
+
+suggested to start with SWI instructions then go from there
+
+
+Bit layout 
+0-11 -> operand2 -> AND with 2047
+12-15 -> destination register -> AND with 30720  
+16-19 -> register for first operand 49120
+20 -> set condition codes 524288
+    0 -> do not alter condition codes
+    1 -> alter condition codes
+21-24 -> opcode 15728640
+25 -> immediate operand2 16777216
+    0 -> operand 2 is a register
+    1 -> operand 2 is an immediate value
+26-27 -> always 00
+28-31 -> condition field? 503316480 
+    determines the circumstances under which an instruction is to be executed
+        decides what the modifier for branch is
+
+RN is always a register 
+    operand 2 describes whether RD is a register or not
+
+
+curr issue:
+    all the decoding associated with MUL and MLA
+
+networks 100% -> need >65%
+system architecture 90% -> need 60% on final 
+
+programming and algorithms -> get to >90% then happy
+assembly language programming

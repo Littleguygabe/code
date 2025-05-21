@@ -1,0 +1,10 @@
+	LDR R0,[R4]
+	STR R0,[R8]
+	LDR R1,[R2, #4]
+	STR R2,[R1, #-36]
+	LDR R1,[R2], #4
+	STR R2,[R1], #-36
+	LDR R5,[R0, R7]
+	STR R2,[R0, R5]
+	LDR R5,[R0], R7
+	STR R2,[R0], R5

@@ -1,0 +1,1 @@
+all things being equal - no increase in capital employed - the total output for each unit of labour increases at a diminishing rate

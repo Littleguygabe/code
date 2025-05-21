@@ -1,0 +1,91 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "ctrl+alt+n",
+        "command": "create.new"
+    },
+    {
+        "key": "ctrl+alt+o",
+        "command": "-create.new"
+    },
+    {
+        "key": "ctrl+p ctrl+enter",
+        "command": "python.execInTerminal-icon"
+    },
+    {
+        "key": "ctrl+shift+t",
+        "command": "-workbench.action.reopenClosedEditor"
+    },
+    {
+        "key": "ctrl+shift+t",
+        "command": "workbench.action.terminal.toggleTerminal",
+        "when": "terminal.active"
+    },
+    {
+        "key": "ctrl+oem_3",
+        "command": "-workbench.action.terminal.toggleTerminal",
+        "when": "terminal.active"
+    },
+    {
+        "key": "ctrl+e ctrl+n",
+        "command": "workbench.action.focusNextGroup"
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "-workbench.action.quickOpenNavigateNextInEditorPicker",
+        "when": "inEditorsPicker && inQuickOpen"
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "-workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
+        "when": "!activeEditorGroupEmpty"
+    },
+    {
+        "key": "ctrl+pagedown",
+        "command": "-workbench.action.nextEditor"
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "workbench.action.nextEditorInGroup"
+    },
+    {
+        "key": "ctrl+k ctrl+pagedown",
+        "command": "-workbench.action.nextEditorInGroup"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "-extension.vim_ctrl+w",
+        "when": "editorTextFocus && vim.active && vim.use<C-w> && !inDebugRepl"
+    },
+    {
+        "key": "numpad_multiply",
+        "command": "list.toggleKeyboardNavigation",
+        "when": "listFocus && listSupportsKeyboardNavigation && !inputFocus"
+    },
+    {
+        "key": "oem_2",
+        "command": "-list.toggleKeyboardNavigation",
+        "when": "listFocus && listSupportsKeyboardNavigation && !inputFocus"
+    },
+    {
+        "key": "ctrl+shift+g",
+        "command": "-workbench.view.scm",
+        "when": "workbench.scm.active"
+    },
+    {
+        "key": "ctrl+shift+g",
+        "command": "workbench.view.extension.gitlab-workflow"
+    },
+    {
+        "key": "ctrl+shift+s ctrl+shift+c",
+        "command": "gl.cloneWiki"
+    },
+    {
+        "key": "ctrl+shift+g ctrl+shift+c",
+        "command": "git.commit"
+    },
+    {
+        "key": "ctrl+j ctrl+enter",
+        "command": "java.debug.runJavaFile"
+    }
+]

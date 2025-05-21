@@ -1,0 +1,2 @@
+ inequality is the **unequal distribution of income and opportunity between different groups in society.**
+Some inequality is needed for a stable economy however too much or too little can be harmful to economic growth and the economy as a whole

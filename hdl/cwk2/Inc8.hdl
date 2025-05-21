@@ -1,0 +1,15 @@
+
+CHIP Inc8
+{
+	IN in[8], carryIn;
+	OUT out[8], carryOut;
+PARTS:	
+	HalfAdder(a=in[0],b=carryIn,sum=out[0],carry=carryAdder);
+	HalfAdder(a=in[1],b=carryAdder,sum=out[1],carry=carryAdder2);
+	HalfAdder(a=in[2],b=carryAdder2,sum=out[2],carry=carryAdder3);
+	HalfAdder(a=in[3],b=carryAdder3,sum=out[3],carry=carryAdder4);
+	HalfAdder(a=in[4],b=carryAdder4,sum=out[4],carry=carryAdder5);
+	HalfAdder(a=in[5],b=carryAdder5,sum=out[5],carry=carryAdder6);
+	HalfAdder(a=in[6],b=carryAdder6,sum=out[6],carry=carryAdder7);
+	HalfAdder(a=in[7],b=carryAdder7,sum=out[7],carry=carryOut);
+}

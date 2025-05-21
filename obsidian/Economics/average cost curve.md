@@ -1,0 +1,1 @@
+The average cost curve is drawn on a [[monopoly diagram]] that shows the average cost of production at every level of output

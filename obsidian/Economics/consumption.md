@@ -1,0 +1,1 @@
+the act of using resources to satisfy current needs and wants

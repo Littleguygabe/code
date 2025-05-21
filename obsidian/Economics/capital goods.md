@@ -1,0 +1,1 @@
+refers to physical assets or resources that are used in the production of goods and services.

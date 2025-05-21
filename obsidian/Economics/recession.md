@@ -1,0 +1,1 @@
+A period of economic downturn that lasts 2 or more quarters

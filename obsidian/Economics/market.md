@@ -1,0 +1,1 @@
+A place in which consumers and producers meet to exchange goods and services

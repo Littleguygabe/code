@@ -1,0 +1,28 @@
+CHIP ALUcore
+{
+	IN a[8],b[8],carryIn,sums,ands,xors,ors,srs,nDb,zeroA;
+	OUT out[8],carryOut,overflow;
+PARTS:
+	ZeroOrIn(in=a,z=zeroA,out=a2);
+	Not8(in=b,out=notB);
+	Mux8(a=b,b=notB,sel=nDb,out=b2);
+
+	Add8C(a=a2,b=b2,carryIn=carryIn,out=addResult,carry=addCarry,overflow=addOverflow);
+	And8(a=a2,b=b2,out=andResult);
+	Xor8(a=a2,b=b2,out=xorResult);
+	Or8(a=a2,b=b2,out=orOut);
+	Shift8(in=a2,out=shiftResult,carryOut=shiftCarry);
+
+	Mux8(a=a2, b=false, sel=true, out=a3);
+	Mux8(a=a3,b=addResult,sel=sums,out=mux1out);
+	Mux(a=false, b=carryIn, sel=sums, out=carrymux);
+	Mux(a=carrymux,b=addCarry,sel=sums,out=muxcarryOut);
+	Mux(a=false,b=addOverflow,sel=sums,out=overflow); 
+	Mux8(a=mux1out,b=andResult,sel=ands,out=mux2out);
+	Mux8(a=mux2out,b=xorResult,sel=xors,out=mux3out);
+	Mux8(a=mux3out,b=orOut,sel=ors,out=mux4out);
+	Mux8(a=mux4out,b=shiftResult,sel=srs,out=out);
+	Mux(a=muxcarryOut,b=shiftCarry,sel=srs,out=carryOut);
+
+}
+

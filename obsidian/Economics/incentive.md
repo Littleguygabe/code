@@ -1,0 +1,1 @@
+benefits or costs of an action that influence people's decisions and behavior

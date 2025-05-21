@@ -1,0 +1,15 @@
+CHIP Shift8
+{
+	IN in[8];
+	OUT out[8], carryOut;
+PARTS:
+    Or(a=in[0], b=false, out=carryOut);
+    Or(a=in[1], b=false, out=out[0]);
+    Or(a=in[2], b=false, out=out[1]);
+    Or(a=in[3], b=false, out=out[2]);
+    Or(a=in[4], b=false, out=out[3]);
+    Or(a=in[5], b=false, out=out[4]);
+    Or(a=in[6], b=false, out=out[5]);
+    Or(a=in[7], b=false, out=out[6]);
+    Or(a=false, b=false, out=out[7]);
+}

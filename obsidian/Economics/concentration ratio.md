@@ -1,0 +1,1 @@
+typically how much of the market share the top 5 firms in the market hold

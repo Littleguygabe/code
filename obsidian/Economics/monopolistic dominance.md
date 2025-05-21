@@ -1,0 +1,1 @@
+When a [[monopoly]] has control over the price and output level of a good or service in a [[market]] 

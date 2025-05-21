@@ -1,0 +1,1 @@
+the cost of borrowing money, expressed as a percentage of the amount of money borrowed

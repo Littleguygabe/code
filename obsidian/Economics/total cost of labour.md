@@ -1,0 +1,1 @@
+the total cost that it will be to employ the required amount of labour at the current wage price

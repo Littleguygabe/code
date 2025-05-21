@@ -1,0 +1,1 @@
+A product or service that can be easily replaced my consumers in a [[market]] 

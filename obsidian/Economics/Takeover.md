@@ -1,0 +1,1 @@
+When one firm makes a successful bid to assume control or acquire another

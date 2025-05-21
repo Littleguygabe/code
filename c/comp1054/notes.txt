@@ -1,0 +1,137 @@
+cur problems:
+    strcpy doesnt copy the null terminator
+    removeVowels
+        empty string wasnt converted
+        "  " wasnt converted
+        BFFL BFFL BFFL BFFL BFFL BFFL wasnt converted correctly
+
+
+in the next commit:
+    update the strcpy command
+
+
+
+arm due at 3pm
+
+programming and algorithms due at 12 lunch time
+
+cur feedback:
+    insertion sort not working
+
+
+
+    remove vowels doesnt working
+
+
+
+
+    strcpy partially works
+
+
+
+
+B	test_insert
+
+; You may want to try some of these different arrays to check your insertion sort really works
+;tis_array	DEFW	2,6,4,6,2,1,1,3,2
+;tis_array	DEFW	1,2,3,4,5,6,7,8,9
+tis_array 	DEFW	9,8,7,6,5,4,3,2,1
+;tis_array	DEFW	9,2,1,4,3,6,5,8,7
+
+nl		DEFB	"\n",0
+space	DEFB	"  ",0
+
+		ALIGN
+
+test_insert
+		ADRL	R0,tis_array
+		MOV		R1,#9
+		BL		InsertionSort
+
+		MOV		R2,#0
+		MOV		R3,#9
+		ADRL	R1,tis_array
+		B		tis_cond
+tis_loop
+		LDR		R0, [R1, R2 LSL #2]
+		SWI		4
+		MOV		R0,#10
+		SWI		0
+		ADD		R2,R2,#1
+tis_cond
+		CMP		R2,R3
+		BLT		tis_loop
+
+		SWI		2
+
+
+; InsertionSort -- should sort the array using the Insertion sort algorithm
+; R0 -> array, R1 -> number of elems in array
+
+InsertionSort
+
+;; Insert your code here
+	MOV R5,R0 ;; base address for inner loop logic to add value to 
+
+	;SUB R5,R5,#4 ; remove to start at 2nd element
+
+	;ADD R0,R0,#1 ;start from the second element as the first is always sorted when size is 1
+	MOV R2,#0
+
+outerloop
+	CMP R2,R1
+	BEQ end ;;to start at 2nd element change to BEQ/BGT start at 1st element
+	;; logic goes here
+
+	MOV R4,R2
+
+	;;get the address of the current outer element
+	ADD R7,R5,R2 LSL #2
+	LDRB R9,[R7]
+
+	;LDRB R0,[R7] ;DEBUGGING
+	;SWI 4 ; EDBUGGING
+
+	;ADRL R0, space ; DEBUGGING
+	;SWI 3 ; DEBUGGING
+
+innerLoop
+	CMP R4,#0
+	BEQ endinner
+
+;;INNER loop logic goes here
+	ADD R6,R5,R4 LSL #2 ; 
+	;LDRB R0,[R6] ; DEBUGGING
+	;SWI 4 ;DEBUGGING
+
+	LDRB R8,[R6]
+
+	CMP R8,R9
+	BGT swapVal
+
+;; 
+ndIn
+	SUB R4,R4,#1
+	B innerLoop
+	;;
+
+swapVal
+	STR R8,[R7]
+	STR R9,[R6]
+
+	B ndIn
+
+endinner
+	
+	;ADRL R0,nl ;; for debugging
+	;SWI 3		; for debugging
+
+	ADD R2,R2,#1
+	B outerloop
+
+end
+
+	BX LR
+
+
+

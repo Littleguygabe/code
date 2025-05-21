@@ -1,0 +1,1 @@
+Consumers stick with one firm firm rather than switch to others due to costs that may be incurred during switching

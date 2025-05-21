@@ -1,0 +1,1 @@
+A smaller firm in the industry is believed to have the closest knowledge of the market therefore all firms follow this small firm

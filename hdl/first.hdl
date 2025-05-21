@@ -1,0 +1,9 @@
+CHIP first
+{
+    IN a,b;
+    OUT output;
+
+    PARTS:
+    Or(a=a,b=b,out=notInp);
+    Not(in=notInp,out=output);
+}

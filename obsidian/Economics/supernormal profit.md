@@ -1,0 +1,1 @@
+Supernormal Profit is any extra profit made after a firm has made [[normal profit]] 

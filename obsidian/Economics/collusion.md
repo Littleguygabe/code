@@ -1,0 +1,1 @@
+Collusion is a non-competitive, secret, and sometimes illegal agreement between rivals which attempts to disrupt the market's equilibrium
