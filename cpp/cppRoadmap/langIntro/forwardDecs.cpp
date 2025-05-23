@@ -6,6 +6,8 @@
 // forward declaration
 int add(int a,int b); // also called a function prototype
 
+// int add(int, int); this also works as do not need to specify identifiers
+
 
 int main(){
 
