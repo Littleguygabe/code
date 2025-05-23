@@ -4,5 +4,5 @@
 
 void packagePrint(){
     std::cout<<"printing from the package"<<std::endl;
-
+    std::cout<<"testing the git shortcuts"<<std::endl;
 }
