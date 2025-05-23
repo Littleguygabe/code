@@ -11,12 +11,14 @@ class Menu{
             std::cout<<"[C]reate new task"<<std::endl;
             std::cout<<"[V]iew current tasks"<<std::endl;
             std::cout<<"[E]xit the program"<<std::endl;
+            return;
         }
 
         char getUserInput(){
             char userInp;
             std::cout<<": ";
             std::cin>>userInp;
+            std::cin.ignore();
             return userInp;
         }   
 };
@@ -29,8 +31,8 @@ class Task{
 
     public:
         Task (std::string name,std::string desc){
-            name = name;
-            desc = desc;
+            this->name = name;
+            this->desc = desc;
         }
 
         std::string getName(){
@@ -53,27 +55,38 @@ class TaskManager{
             switch(userInp){
                 case 'E':
                     Running = false;
+                    break;
 
                 case 'C':
                     createNewTask();
+                    break;
 
                 case 'V':
                     listTasks();
+                    break;
 
+                default:
+                    std::cout<<"Please Choose a Valid Option"<<std::endl<<std::endl;
+                    break;
             }
         }
 
         void createNewTask(){
             std::string name,desc;
+
+
+
             std::cout<<"enter the name of the new task: ";
-            std::cin>>name;
+            std::getline(std::cin,name);
 
             std::cout<<"enter the decription of the new task: ";
-            std::cin>>desc;
+            std::getline(std::cin,desc);
 
             Task newTask(name,desc);
 
             tasks.push_back(newTask);
+
+            return;
 
         }
 
@@ -87,7 +100,7 @@ class TaskManager{
             }
             else{
                 for (size_t i = 0; i<tasks.size();i++){
-                    std::cout<<i<<tasks[i].getName();
+                    std::cout<<i+1<<". "<<tasks[i].getName();
 
                     if(detail == 'y'){
                         std::cout<<" -> "<<tasks[i].getDesc()<<std::endl;
@@ -98,6 +111,8 @@ class TaskManager{
 
                 }
             }
+
+            return;
         }
 
     public:
