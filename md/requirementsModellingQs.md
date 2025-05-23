@@ -6,6 +6,8 @@ Modelling the requirements can also help us identify the specifications that wil
 2. What is they key difference between a requirements use case diagram and a specifications use case diagram
 A requirements use case diagram models the behaviours that the system needs to have and what each stakeholder should be able to do, whereas a specifications use case diagram is used to show how each of these requirements will be achieved/designed and implemented.
 
+Furthermore the requirements diagram is typically 'client facing' therefore may not include as much technical information and take on a high-level appearance so that it can be easily understood by all parties, whereas a specification diagram will typically be more technical and a lower level because they can then be used by developers to understand how certain aspects of the program should work
+
 3. Describe what a context diagram is primarily used to illustrate in requirements modelling
 A context diagram is aimed to show how the new system will implement into other systems within the external environment the new system is being implemented into. 
 
