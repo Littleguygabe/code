@@ -5,7 +5,4 @@
 void packagePrint(){
     std::cout<<"printing from the package"<<std::endl;
     std::cout<<"testing the chained shortcuts"<<std::endl;
-    std::cout<<"does this work aswel??"<<std::endl;
-    std::cout<<"no it does not :("<<std::endl;
-
 }
