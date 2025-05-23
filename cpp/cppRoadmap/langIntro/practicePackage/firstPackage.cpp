@@ -1,3 +1,5 @@
+#include "firstPackage.h" // include for good practice -> means compiler can catch errors 
+// rather than the linker
 #include <iostream>
 
 void packagePrint(){
