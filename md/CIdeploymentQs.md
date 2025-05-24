@@ -17,7 +17,8 @@ In addtion continuous integration aims to identify integration errors early, whi
 - Ensures that all release versions pass a certain level of standardised testing
 
 6. What information is typically included in a build version
-Typically a build configuration will store information about the dependencies for the OS that the system is being deployed upon, or components that may be needed by the system such as libraries
+Typically a build configuration will store information about the dependencies for the OS that the system is being deployed upon, or components that may be needed by the system such as libraries. Furthermore it can store metadata, version numbers, etc.
+
 
 7. Briefly explain automatic deployment
-Automatic deployment is the idea that as soon as a new version is created and passes certain automatic tests the system will then apply a build configuration to it and therefore create a new release version of the software.
+Automatic deployment is the idea that as soon as a new version is created and passes certain automatic tests the system will then apply a build configuration to it and therefore create a new release version of the software. This then pushes the release to the target environment once an acceptable build has been created 
