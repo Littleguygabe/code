@@ -8,7 +8,9 @@ Build/config management is used for when a system is ready to be released and th
 Allows developers to track changes to the code as they are commited and therefore it can also allow us to revert to old versions of the code if we need to go back to before a bug existed or create a new feature based on an old version. This also allows us to create branches of code which means that a company can continue to work on an old version of the program/continue support seperate of the newest version that has been released, for example how microsoft continued support for windows 10 long after windows 11 was released
 
 4. Describe the concept of continuous integration
-Continuous integration is the idea that code changes are being constantly added to the current working version, so when someone pushes their code to the database/repository then automatic tests are ran on their code to make sure it meets a certain standard of useability and then if all tests are passed then their code is created as a release version of the software. This means changes are being constantly made however the changes are safe to some degree as they have automatic tests to pass. 
+Continuous integration is the idea that code changes are being constantly added to the current working version, so when someone pushes their code to the database/repository then automatic tests are ran on their code to make sure it meets a certain standard of useability and then if all tests are passed then their code is created as a release version of the software. This means changes are being constantly made however the changes are safe to some degree as they have automatic tests to pass.
+
+In addtion continuous integration aims to identify integration errors early, which therefore can help reduce costs as we handle these issues sooner in the development life-cycle, which we can see from the cost pyramid will drastically reduce costs.
 
 5. List 2 benefits of continuous integration
 - Allows constant agile development of the system
