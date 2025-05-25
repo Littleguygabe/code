@@ -5,6 +5,9 @@ from sklearn.datasets import load_iris
 from sklearn.cluster import KMeans
 
 iris = load_iris()
+#dont need if we are using our own dataset
+
+
 data = pd.DataFrame(iris.data, columns=iris.feature_names)
 
 # ^^ Data pre-processing
