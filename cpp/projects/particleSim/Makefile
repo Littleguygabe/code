@@ -5,7 +5,7 @@ CXXFLAGS = -std=c++17 -I/opt/homebrew/include
 LDFLAGS = -L/opt/homebrew/lib -lraylib -framework OpenGL -framework Cocoa -framework IOKit -framework CoreVideo
 
 SRC = main.cpp
-OUT = raylibInterface
+OUT = particleSim 
 all: $(OUT)
 
 $(OUT): $(SRC)
