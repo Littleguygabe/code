@@ -11,12 +11,8 @@ struct Vect2D {
     float y;
 };
 
-class Particle{
-    public:
-        Vect2D position;
-        Vect2D velocity;
-    
-        Particle(){
-
-        }
-}
+struct Particle {
+    Vect2D position;
+    Vect2D velocity;
+    float radius = 3.0f;
+};
