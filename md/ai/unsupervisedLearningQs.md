@@ -18,6 +18,9 @@ the distance to the nearest centroid - by assigning a point to the nearest centr
 
 Quantitative data that is high quality and cleaned of any null/NaN values
 
+**Better answer:**
+clean, structured data that is often numerical or categorical depending on the algorithm in question
+
 6. Explain the purpose of association rules for in unsupervised learning
 
 the purpose of them is to try and find correlation between any nuumber of variables >1
