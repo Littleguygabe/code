@@ -79,8 +79,8 @@ void handleCollision(Particle& a, Particle& b) {
 
 // ---- Main ----
 int main() {
-    const int screenWidth = 1000;
-    const int screenHeight = 1000;
+    const int screenWidth = 800;
+    const int screenHeight = 600;
     const float cellSize = 10.0f;
     const int particleCount = 1000;
 
