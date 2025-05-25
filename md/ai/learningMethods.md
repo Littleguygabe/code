@@ -36,3 +36,5 @@ Data pre-processing is ensuring that the data being which is intended to be used
 
 - Removing null/NaN values from the data set
 - changing natural language into quantitative values, for example good or bad could become 1 and 0 respectively.
+
+89/90
