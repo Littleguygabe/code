@@ -23,10 +23,7 @@ plt.legend()
 plt.show()
 
 
-""" 
 plt.scatter(data['sepal length (cm)'], data['sepal width (cm)'],marker='x')
 plt.xlabel('Sepal Length')
 plt.ylabel('Sepal Width')
-plt.show() """
-
-
+plt.show() 
