@@ -31,8 +31,13 @@ it is important to distinguish because correlation simply shows a relationship b
 
 8. besides k-means name one other algorithm that is used for association rules
 
-
+**Frequent Pattern Growth algorithm** (FP algorithm)
 
 9. What is a major challenge in evaluating the accuracy of unsupervised learning models compared to supervised learning models
 
 unsupervised models don't have a pre-defined metric that they can be evaluated agaist as they are discovering new relationships or patterns so although we may be able to look at the data and see a rough relationship between the given aspects it can be hard to confidently identify until the relationship is put into practice
+
+
+83/90 
+
+good on the whole however shouldn't assume that the data for unsupervised learning needs to be quantitative, so a better answer is that it should be clean and numerical or categorical
