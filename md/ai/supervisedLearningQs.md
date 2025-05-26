@@ -37,4 +37,4 @@ Overfitting is when the model specialises to the training data rather than disco
 
 10. What is the purpose of splitting data into training and testing sets
 
-The reason we split a dataset into training and testing sets is because it means that once the model has been trained on the training set then we can use the testing set to get a performance benchmark of the model on un-seen data, this can help to avoid over-inflation of performance metrics as a result of overfitting.
+The reason we split a dataset into training and testing sets is because it means that once the model has been trained on the training set then we can use the testing set to get a performance benchmark of the model on un-seen data, this can help to avoid over-inflation of performance metrics as a result of overfitting
