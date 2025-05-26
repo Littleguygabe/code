@@ -1,11 +1,11 @@
 1. What is the primary task of supervised learning algorithms
 
-To learn from labelled data to produce a model that can accurately label previously unseen data 
+To learn from labelled data to produce a model that can accurately label previously unseen data **through predicting a specific value or data class**
 
 2. Give two example of tasks that well-suited for supervised learning
 
 - classification
-- predictions based on previous data
+- predictions based on previous data -> **stock price prediction**
 
 3. Explain the difference between classification and regression in the context of supervised learning labels
 
@@ -35,6 +35,10 @@ Overfitting is when the model specialises to the training data rather than disco
 
 9. What is the main challenge associated with interpreting complex decision trees
 
+**as the decision tree becomes deeper and more complex it also becomes harder to be able to understand the decision process as a human and as a result it becomes hard to explain the logic behind what decisions are being made. Futhermore if the tree becomes overly complex it can make decisions on non-generalised relationships therefore resulting in overfitting within the model**
+
 10. What is the purpose of splitting data into training and testing sets
 
 The reason we split a dataset into training and testing sets is because it means that once the model has been trained on the training set then we can use the testing set to get a performance benchmark of the model on un-seen data, this can help to avoid over-inflation of performance metrics as a result of overfitting
+
+81/100 improvements on q1,q2 & q9
