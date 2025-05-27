@@ -11,6 +11,7 @@
 
 #perform the filter mask
 
+
 import numpy as np
 
 
@@ -22,12 +23,15 @@ def featureFilter(inputMatrix,Filter):
 
 def main():
     print('running...')
-    inputMatrix = np.round(np.random.rand(12,12),2)
-    inputMatrix = np.arange(0,100)
+    
+
     inputMatrix = inputMatrix.reshape(10,10)
+    inputMatrix = np.arange(0,100)
+
+    inputMatrix = np.round(np.random.rand(100),2)
+
+
     featureFilter(inputMatrix,2)
-
-
 
 
 if __name__ == '__main__':
