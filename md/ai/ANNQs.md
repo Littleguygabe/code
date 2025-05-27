@@ -39,4 +39,4 @@ Any function that has linearly seperable output values
 
 10. What is a Convolutional Neural Network and how does it differ from simpler feed forward networks
 
-A CNN differs from simpler feed-forward networks because it is also a deep network, this means that it has mutliple hidden neuron layers.
+A CNN differs from simpler feed-forward networks because it is also a deep network, this means that it has mutliple hidden neuron layers whereas a simple feed forward network may at most have a single hidden layer rather than multiple 
