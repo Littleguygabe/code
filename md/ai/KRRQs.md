@@ -2,6 +2,8 @@
 
 An expert system is a knowledge base built on top of knowledge collected from experts in certain fields, however this knowledge can typically be subjective and therefore different aspects of data within the base may contradict one another. Case-based reasoning on the other hand looks at the objective facts of a case and then build its logic and reasoning on top of that so that it generates responses based on evidence rather than subjective opinion.
 
+**should have emphasised for expert-knowledge systems the knowledge is typically represented as a set of rules that is if-then along with sets of heuristics. Then for case based reasoning clarify that the knowledge base is a collection of past cases, each describing a problem, its solution and the outcome. The system then reasons by finding similar past cases to solve new problems (somewhat like apttern matching)
+
 2. Why was domain knowledge considered dominant in ai methods until the '90s
 
 domain knowledge was considered dominant as it provided accurate, specific knowledge based on a given subject so allowed for more informed answers than just background or general knowledge. Further more if building systems such as top down decision trees domain knowledge would allow for better rules to be formulated and therefore provide more accurate outputs for a given input
