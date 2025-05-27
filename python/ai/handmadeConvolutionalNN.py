@@ -20,18 +20,24 @@ def featureFilter(inputMatrix,Filter):
     print(inputMatrix)
 
 
+def createFilter(size):
+    filterMatrix = np.random.rand(size,size)
+    return filterMatrix.round()
 
 def main():
     print('running...')
     
 
-    inputMatrix = inputMatrix.reshape(10,10)
     inputMatrix = np.arange(0,100)
+#    inputMatrix = np.round(np.random.rand(100),2)
 
-    inputMatrix = np.round(np.random.rand(100),2)
 
+    inputMatrix = inputMatrix.reshape(10,10)
 
-    featureFilter(inputMatrix,2)
+    filterMatrix = createFilter(2)
+    print(filterMatrix)
+
+    featureFilter(inputMatrix,filterMatrix)
 
 
 if __name__ == '__main__':
