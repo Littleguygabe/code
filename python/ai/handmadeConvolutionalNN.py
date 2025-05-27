@@ -7,3 +7,14 @@
 # normalise the output from the pooling and convolutional layers
 # then perform dot product between the normalised output and each of the known matrix patterns
 # the closer to 1 the output of the dot product the more likely it is that we have a match (could also use euclidean distance)
+
+def main():
+    print('running...')
+
+    
+
+
+
+
+if __name__ == '__main__':
+    main()
