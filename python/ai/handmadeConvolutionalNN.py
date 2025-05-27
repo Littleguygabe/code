@@ -8,10 +8,22 @@
 # then perform dot product between the normalised output and each of the known matrix patterns
 # the closer to 1 the output of the dot product the more likely it is that we have a match (could also use euclidean distance)
 
+
+#perform the filter mask
+
+import numpy as np
+
+
+def featureFilter(inputMatrix,Filter):
+    filteredMatrix = np.zeros((10,10))
+    print(filteredMatrix)
+
+
+
 def main():
     print('running...')
+    featureFilter(1,2)
 
-    
 
 
 
