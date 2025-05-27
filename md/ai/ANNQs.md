@@ -2,6 +2,8 @@
 
 Instead of the programmer hard coding the rules to produce predictions or classify outputs the model itself adjust weight to control the manipulate the input values and discover the rules of the system, therefore allowing it to identify patterns and rules that may not have existed before.
 
+**Should explicitly mention labelled data**
+
 2. According to the source material what were the two key concepts introduced by McCulloch & Pitts in their 1943 neural network model
 
 - Showed that you can use neurons to construct simple logical systems
@@ -15,17 +17,25 @@ The limitation was that the perceptron can only learn relationships for linearly
 
 To take multiple weighted inputs and combine them into a single output value that can then be passed onto the next layer of the network or as an output to the user
 
+**Could mention how before the output in passed on the neuron applies and acitivation function which can introduce non-linearity**
+
 5. How is the firing of a neuron determined in the basic McCulloch-Pitts model
 
 By adding threshold values to determine whether the combined inputs constitute whether or not a neuron has reached the point at which is should be triggered
+
+**Could improve by mentioning that if the combined weights are above the given threshold then the neuron fires**
+
 
 6. Explain the difference between the training value and the output value in the context of training a neural network
 
 The training value is the value that is expected to be produced by the model (known as the data is labelled) where as the output is the actual output that we get from the model. 
 
+
 7. What is the purpose of the learning rate in the weight update formula
 
 To be able to dictate how much the model changes the weight of a given neuron depending on the output, it is useful because it means that we can tailor it to either make larger jumps which will result in finding the global minimum quicker, however it can also mean the model makes changes that are too significant so the model won't actually acheive the best minimum it could. On the other hand we can use it make smaller changes so that the model is more likely to find the absolute minimum however it may also mean the model gets stuck in a local minimum rather than a global minimum
+
+**Explicitly mention that the learning rate changes the step size of the model during optimisation**
 
 8. What type of functions can a single layer neural network (perceptron) represent 
 
@@ -40,3 +50,7 @@ Any function that has linearly seperable output values
 10. What is a Convolutional Neural Network and how does it differ from simpler feed forward networks
 
 A CNN differs from simpler feed-forward networks because it is also a deep network, this means that it has mutliple hidden neuron layers whereas a simple feed forward network may at most have a single hidden layer rather than multiple 
+
+6/10
+
+**The main difference is that it has convolution layers, which are specialised layers that are better-suited for processing data that is in a grid-like topology - ie images. The convolutional layers are used to identify local features and then pooling creates a simplified feature map, this process is then repeated for a given number of times until it reaches an acceptable level.**
