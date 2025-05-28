@@ -1,3 +1,10 @@
-import numpy as np
+import numpy as np 
+from PIL import Image
 
-print(np.zeros((2,3)))
+image = Image.open('test.png')
+greyImage = image.convert("L")
+
+greyImageScaled = greyImage.resize((64,64))
+
+brightnessMatrix = np.matrix(greyImageScaled)
+print(brightnessMatrix)
