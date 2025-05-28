@@ -28,7 +28,15 @@ def featureFilter(inputMatrix,filterMatrix):
 
     pm = np.pad(inputMatrix,pad_width=padSize,mode='constant')
 
-    print(pm)
+    output = np.zeros((imh,imw))
+
+    for i in range(padSize):
+        for j in range(padSize):
+            region = pm[i:i+fmh,j:j+fmw]
+            output(i,j) = np.sum(region*filterMatrix)
+
+
+    return output
 
 
 
