@@ -69,6 +69,10 @@ class ConvolutionalPoolLayer:
     def normaliseMatrix(self,matrix):
         return ((matrix-matrix.min())/(matrix.max()-matrix.min())).round(3)
 
+filters = {
+    'HEdge':np.array([[1,1,1],[0,0,0],[-1,-1,-1]]),
+    'VEdge':np.array([[1,0,-1],[1,0,-1],[1,0,-1]])
+}
 
 def createRandFilter(size):
     filterMatrix = np.random.rand(size,size)
@@ -94,12 +98,7 @@ def main():
     inputMatrix = np.round(np.random.rand(inputSize**2),2)
     inputMatrix = inputMatrix.reshape(inputSize,inputSize)
 
-    filterMatrix = np.array([[1,0,-1],
-                             [1,0,-1],
-                             [1,0,-1]])
-
-
-    layer = ConvolutionalPoolLayer(filterMatrix)
+    layer = ConvolutionalPoolLayer(filters['VEdge'])
 
     imageBrightnessMap = getBrightnessMap('test.png')
     layerOutput = layer.processData(imageBrightnessMap)
