@@ -14,41 +14,72 @@
 
 import numpy as np
 
+class ConvolutionalPoolLayer:
+    def __init__(self,filterMatrix) -> None:
+        self.filterMatrix= filterMatrix
 
-def featureFilter(inputMatrix,filterMatrix):
+    def processData(self,matrix):
+        matrix = self.featureFilter(matrix)
+        matrix = self.applyReLU(matrix)
+        matrix = self.normaliseMatrix(matrix)
+        matrix = self.pool(matrix)
 
-    imh,imw = inputMatrix.shape
-    fmh,fmw = filterMatrix.shape
+        return matrix
 
-    #pad the matrix
-    padSize = fmh//2
+    def featureFilter(self,inputMatrix):
 
-    pm = np.pad(inputMatrix,pad_width=padSize,mode='constant')
+        imh,imw = inputMatrix.shape
+        fmh,fmw = self.filterMatrix.shape
 
-    output = np.zeros((imh,imw))
+        #pad the matrix
+        padSize = fmh//2
 
-    #iterate over the input matrix apply the filter over the given area then sum the 3 by 3 so also get the inputs of the neighbours
-    for i in range(0,imw):
-        for j in range(0,imh):
+        pm = np.pad(inputMatrix,pad_width=padSize,mode='constant')
 
-            region = pm[i:i+fmh,j:j+fmw]
-            output[i,j] = np.sum(region*filterMatrix)
+        output = np.zeros((imh,imw))
 
-    return output
+        #iterate over the input matrix apply the filter over the given area then sum the 3 by 3 so also get the inputs of the neighbours
+        for i in range(0,imw):
+            for j in range(0,imh):
 
+                region = pm[i:i+fmh,j:j+fmw]
+                output[i,j] = np.sum(region*self.filterMatrix)
+
+        return output
+
+    def applyReLU(self,matrix):
+        return np.maximum(0,matrix)
+    
+    def pool(self,matrix):
+        poolSize = 2
+
+        mh,mw = matrix.shape
+
+        outputMatrix = np.zeros((mh//2,mw//2))
+
+        for i in range(0,mw,poolSize):
+            for j in range(0,mh,poolSize):
+                region = matrix[i:i+poolSize,j:j+poolSize]
+                outputMatrix[int(i/2),int(j/2)] = region.max()
+
+
+        return outputMatrix
+
+    def normaliseMatrix(self,matrix):
+        return ((matrix-matrix.min())/(matrix.max()-matrix.min())).round(3)
 
 
 def createRandFilter(size):
     filterMatrix = np.random.rand(size,size)
     return filterMatrix.round()
 
-def main():
-    print('running...')
-    inputSize = 10
 
-    #inputMatrix = np.arange(0,inputSize**2)
-    #inputMatrix = inputMatrix.reshape(inputSize,inputSize)
-    #filterMatrix = createRandFilter(6)
+def main():
+    inputSize = 100
+
+    # inputMatrix = np.arange(0,inputSize**2)
+    # inputMatrix = inputMatrix.reshape(inputSize,inputSize)
+    # filterMatrix = createRandFilter(6)
 
 
     inputMatrix = np.round(np.random.rand(inputSize**2),2)
@@ -58,10 +89,17 @@ def main():
                              [1,0,-1],
                              [1,0,-1]])
 
- 
 
-    filteredMatrix = featureFilter(inputMatrix,filterMatrix)
-    print(filteredMatrix)
+    layer = ConvolutionalPoolLayer(filterMatrix)
 
+
+    layerOutput = layer.processData(inputMatrix)
+    layerOutput = layer.processData(layerOutput)
+
+
+    print(layerOutput)
+
+
+    
 if __name__ == '__main__':
     main()
