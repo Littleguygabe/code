@@ -20,18 +20,15 @@ def featureFilter(inputMatrix,filterMatrix):
     imh,imw = inputMatrix.shape
     fmh,fmw = filterMatrix.shape
 
-    if not (imh%fmh==0) or not (imw%fmw==0):
-        print('Cannot completely apply the filter')
-        return -1
-
     print(filterMatrix)
     print(inputMatrix)
 
     #pad the matrix
-    hpad = fmh//2
-    wpad = fmh//2
+    padSize = fmh//2
 
-    print(hpad,wpad)
+    pm = np.pad(inputMatrix,pad_width=padSize,mode='constant')
+
+    print(pm)
 
 
 
@@ -41,7 +38,7 @@ def createRandFilter(size):
 
 def main():
     print('running...')
-    inputSize = 30
+    inputSize = 10
 
 #    inputMatrix = np.arange(0,inputSize**2)
 #    inputMatrix = inputMatrix.reshape(inputSize,inputSize)
