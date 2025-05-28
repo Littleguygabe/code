@@ -79,7 +79,7 @@ def createRandFilter(size):
     return filterMatrix.round()
 
 def getBrightnessMap(fileLocation):
-    mapSize = 128
+    mapSize = 512
 
     image = Image.open(fileLocation)
     image = image.convert("L")
@@ -88,6 +88,16 @@ def getBrightnessMap(fileLocation):
     image = (image/255.0).round(3)
 
     return image
+
+def removeImageNoise(matrix):
+
+
+    edgeThreshold = 0.05
+
+    activatedMatrix = (matrix>edgeThreshold).astype(int)
+
+    return activatedMatrix
+
 
 def main():
     imageBrightnessMap = getBrightnessMap('peppa.jpg')
@@ -98,19 +108,23 @@ def main():
     verticalLayer = ConvolutionalPoolLayer(filters['VEdge'])
 
     horOutput = horizontalLayer.processData(imageBrightnessMap)
-    horOutput = horizontalLayer.processData(imageBrightnessMap)
+    horOutput = horizontalLayer.processData(horOutput)
+    horOutput = horizontalLayer.processData(horOutput)
+    # horOutput = horizontalLayer.processData(horOutput)
 
  
     verOutput = verticalLayer.processData(imageBrightnessMap)
-    verOutput = verticalLayer.processData(imageBrightnessMap)   
+    verOutput = verticalLayer.processData(verOutput)   
+    verOutput = verticalLayer.processData(verOutput)   
+    # verOutput = verticalLayer.processData(verOutput)   
 
     combinedOutput = horOutput+verOutput
     combinedOutput = ((combinedOutput-combinedOutput.min())/(combinedOutput.max()-combinedOutput.min())).round(3)
-
-    print(combinedOutput)
     
+    finalOutput = removeImageNoise(combinedOutput)
+
     with open('output.txt', 'w') as f:
-        f.write(str(combinedOutput))
+        f.write(str(finalOutput))
         f.close()
 
     
