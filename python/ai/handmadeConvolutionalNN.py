@@ -13,6 +13,7 @@
 
 
 import numpy as np
+from PIL import Image
 
 class ConvolutionalPoolLayer:
     def __init__(self,filterMatrix) -> None:
@@ -73,6 +74,14 @@ def createRandFilter(size):
     filterMatrix = np.random.rand(size,size)
     return filterMatrix.round()
 
+def getBrightnessMap(fileLocation):
+    image = Image.open(fileLocation)
+    image = image.convert("L")
+    image = image.resize((64,64))
+    image = np.matrix(image)
+    image = (image/255.0).round(3)
+
+    return image
 
 def main():
     inputSize = 25
@@ -92,11 +101,9 @@ def main():
 
     layer = ConvolutionalPoolLayer(filterMatrix)
 
-
-    layerOutput = layer.processData(inputMatrix)
-
-
-
+    imageBrightnessMap = getBrightnessMap('test.png')
+    layerOutput = layer.processData(imageBrightnessMap)
+    
     print(layerOutput)
 
 
