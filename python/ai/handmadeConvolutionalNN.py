@@ -20,9 +20,6 @@ def featureFilter(inputMatrix,filterMatrix):
     imh,imw = inputMatrix.shape
     fmh,fmw = filterMatrix.shape
 
-    print(filterMatrix)
-    print(inputMatrix)
-
     #pad the matrix
     padSize = fmh//2
 
@@ -30,11 +27,12 @@ def featureFilter(inputMatrix,filterMatrix):
 
     output = np.zeros((imh,imw))
 
-    for i in range(padSize):
-        for j in range(padSize):
-            region = pm[i:i+fmh,j:j+fmw]
-            output(i,j) = np.sum(region*filterMatrix)
+    #iterate over the input matrix apply the filter over the given area then sum the 3 by 3 so also get the inputs of the neighbours
+    for i in range(0,imw):
+        for j in range(0,imh):
 
+            region = pm[i:i+fmh,j:j+fmw]
+            output[i,j] = np.sum(region*filterMatrix)
 
     return output
 
@@ -48,9 +46,9 @@ def main():
     print('running...')
     inputSize = 10
 
-#    inputMatrix = np.arange(0,inputSize**2)
-#    inputMatrix = inputMatrix.reshape(inputSize,inputSize)
-#    filterMatrix = createRandFilter(6)
+    #inputMatrix = np.arange(0,inputSize**2)
+    #inputMatrix = inputMatrix.reshape(inputSize,inputSize)
+    #filterMatrix = createRandFilter(6)
 
 
     inputMatrix = np.round(np.random.rand(inputSize**2),2)
@@ -62,8 +60,8 @@ def main():
 
  
 
-    featureFilter(inputMatrix,filterMatrix)
-
+    filteredMatrix = featureFilter(inputMatrix,filterMatrix)
+    print(filteredMatrix)
 
 if __name__ == '__main__':
     main()
