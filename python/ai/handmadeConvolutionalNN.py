@@ -79,32 +79,39 @@ def createRandFilter(size):
     return filterMatrix.round()
 
 def getBrightnessMap(fileLocation):
+    mapSize = 128
+
     image = Image.open(fileLocation)
     image = image.convert("L")
-    image = image.resize((64,64))
+    image = image.resize((mapSize,mapSize))
     image = np.matrix(image)
     image = (image/255.0).round(3)
 
     return image
 
 def main():
-    inputSize = 25
-
-    # inputMatrix = np.arange(0,inputSize**2)
-    # inputMatrix = inputMatrix.reshape(inputSize,inputSize)
-    # filterMatrix = createRandFilter(6)
-
-
-    inputMatrix = np.round(np.random.rand(inputSize**2),2)
-    inputMatrix = inputMatrix.reshape(inputSize,inputSize)
-
-    layer = ConvolutionalPoolLayer(filters['VEdge'])
-
-    imageBrightnessMap = getBrightnessMap('test.png')
-    layerOutput = layer.processData(imageBrightnessMap)
+    imageBrightnessMap = getBrightnessMap('peppa.jpg')
     
-    print(layerOutput)
+    np.set_printoptions(threshold=np.inf,linewidth=np.inf)
+   
+    horizontalLayer = ConvolutionalPoolLayer(filters['HEdge'])
+    verticalLayer = ConvolutionalPoolLayer(filters['VEdge'])
 
+    horOutput = horizontalLayer.processData(imageBrightnessMap)
+    horOutput = horizontalLayer.processData(imageBrightnessMap)
+
+ 
+    verOutput = verticalLayer.processData(imageBrightnessMap)
+    verOutput = verticalLayer.processData(imageBrightnessMap)   
+
+    combinedOutput = horOutput+verOutput
+    combinedOutput = ((combinedOutput-combinedOutput.min())/(combinedOutput.max()-combinedOutput.min())).round(3)
+
+    print(combinedOutput)
+    
+    with open('output.txt', 'w') as f:
+        f.write(str(combinedOutput))
+        f.close()
 
     
 if __name__ == '__main__':
