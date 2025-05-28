@@ -18,17 +18,24 @@ import numpy as np
 def featureFilter(inputMatrix,filterMatrix):
 
     imh,imw = inputMatrix.shape
-    fmh,fmw = inputMatrix.shape
+    fmh,fmw = filterMatrix.shape
 
-    if not (imh%fmh==0) and (imw%fmw==0):
+    if not (imh%fmh==0) or not (imw%fmw==0):
         print('Cannot completely apply the filter')
         return -1
 
     print(filterMatrix)
     print(inputMatrix)
 
+    #pad the matrix
+    hpad = fmh//2
+    wpad = fmh//2
 
-def createFilter(size):
+    print(hpad,wpad)
+
+
+
+def createRandFilter(size):
     filterMatrix = np.random.rand(size,size)
     return filterMatrix.round()
 
@@ -36,13 +43,19 @@ def main():
     print('running...')
     inputSize = 30
 
-    #inputMatrix = np.arange(0,inputSize**2)
+#    inputMatrix = np.arange(0,inputSize**2)
+#    inputMatrix = inputMatrix.reshape(inputSize,inputSize)
+#    filterMatrix = createRandFilter(6)
+
+
     inputMatrix = np.round(np.random.rand(inputSize**2),2)
-
-
     inputMatrix = inputMatrix.reshape(inputSize,inputSize)
 
-    filterMatrix = createFilter(6)
+    filterMatrix = np.array([[1,0,-1],
+                             [1,0,-1],
+                             [1,0,-1]])
+
+ 
 
     featureFilter(inputMatrix,filterMatrix)
 
