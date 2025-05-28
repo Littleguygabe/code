@@ -57,8 +57,8 @@ class ConvolutionalPoolLayer:
 
         outputMatrix = np.zeros((mh//2,mw//2))
 
-        for i in range(0,mw,poolSize):
-            for j in range(0,mh,poolSize):
+        for i in range(0,mw-1,poolSize):
+            for j in range(0,mh-1,poolSize):
                 region = matrix[i:i+poolSize,j:j+poolSize]
                 outputMatrix[int(i/2),int(j/2)] = region.max()
 
@@ -75,7 +75,7 @@ def createRandFilter(size):
 
 
 def main():
-    inputSize = 100
+    inputSize = 25
 
     # inputMatrix = np.arange(0,inputSize**2)
     # inputMatrix = inputMatrix.reshape(inputSize,inputSize)
@@ -94,7 +94,7 @@ def main():
 
 
     layerOutput = layer.processData(inputMatrix)
-    layerOutput = layer.processData(layerOutput)
+
 
 
     print(layerOutput)
