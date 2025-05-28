@@ -58,7 +58,7 @@ class ConvolutionalPoolLayer:
         outputMatrix = np.zeros((mh//2,mw//2))
 
         for i in range(0,mw-1,poolSize):
-            for j in range(0,mh-1,poolSize):
+            for j in range(0,mh-1p,poolSize):
                 region = matrix[i:i+poolSize,j:j+poolSize]
                 outputMatrix[int(i/2),int(j/2)] = region.max()
 
