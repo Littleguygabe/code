@@ -33,7 +33,7 @@ def shortestP(parents,startNode,endNode):
 
 
 def startprogram():
-    sw=3000
+    sw=1500
     sh=1000
     screen=pygame.display.set_mode((sw,sh))
     clock = pygame.time.Clock()
