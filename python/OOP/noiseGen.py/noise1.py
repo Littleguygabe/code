@@ -5,7 +5,7 @@ pygame.init()
 GRAY = (75,75,75)
 WHITE=(255,255,255)
 BLACK = (0,0,0)
-RED = (255,0,0)
+RED = (255,255,255)
 
 class vector():
     def __init__(self,x,y,screen):
@@ -49,12 +49,12 @@ class vector():
         for i in range(0,self.colorInfluence,5):
             gfxdraw.filled_circle(self.screen,int(self.vectorx),int(self.vectory),i,(255,255,255,self.PcolourIntensity))
             
-            gfxdraw.filled_circle(self.screen,int(self.vectorXoppo),int(self.vectorYoppo),i,(255,0,0,self.NcolourIntesity))    
+            gfxdraw.filled_circle(self.screen,int(self.vectorXoppo),int(self.vectorYoppo),i,(255,255,255,self.NcolourIntesity))    
                 
 
 def startprogram():
-    sw=2400
-    sh=1200
+    sw=1500
+    sh=1000
     screen=pygame.display.set_mode((sw,sh))
     clock = pygame.time.Clock()
     vectorArr = []
