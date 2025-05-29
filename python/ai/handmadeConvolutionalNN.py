@@ -127,6 +127,10 @@ def main():
         f.write(str(finalOutput))
         f.close()
 
+    with open('unfiltered.txt','w') as f:
+        f.write(str(combinedOutput))
+        f.close()
+
     
 if __name__ == '__main__':
     main()
