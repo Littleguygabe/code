@@ -2,6 +2,9 @@
 
 its purpose is to act as a queue that stores all the fringe nodes - nodes that have been discovered but not yet processed by the algorithm.
 
+**9/10**
+**Explicitly state that the Queing function determines the order in which nodes are processed which is crucial for distinguising between different search strategies**
+
 2. In the general search algorithm what happens if the nodes queue is empty?
 
 The search algorithm returns false becuase no goal state has been reached however there are no more pathways to nodes that haven't been processed left to check therefore no solution can be found, which is why the algorithm will return false as there is no valid path to the goal state from the initial state
@@ -13,6 +16,10 @@ the goal test is performed on the state of a node to check if the current node i
 4. explain what the action of Remove-Front(nodes) in the general-search algorithm
 
 The remove-front function is used to pop a fringe node from the queue for it to be processed - check if it is the goal state, if not get its child nodes and push them to the queue. This ensures that a breadth-first search is performed as the nodes are checked in the order they are added found in the data structure allowing us to perform 'row-by-row' searching
+
+**9/10**
+
+**be more precise that its the enqueue at end that forces this to be a breadth-first-search**
 
 5. What is the branching factor (b) in the context of search tree evalution
 
@@ -39,3 +46,5 @@ optimality
 10. Describe the visual pattern of a breadth-first-search moving through a search space
 
 As the breadth-first-search (BFS) moves through a search space it evaluates the space on a 'row-by-row' basis, this makes it appear as though it is a wave moving through the space because it intially completely checks a row and adds all the child nodes of that row to the back of the search queue, and then as the algorithm moves through the queue it will inherently move onto the next row of values.
+
+98/100
