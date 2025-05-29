@@ -37,3 +37,5 @@ A goal state that isn't at the front of the queue may not be immediately found b
 10. Under what condition can UCS guarantee finding the optimal solution 
 
 It can only guarantee finding the optimal solution if all the path costs within the tree are non-negative
+
+**100/100**

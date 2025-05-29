@@ -14,6 +14,7 @@
 
 import numpy as np
 from PIL import Image
+import time
 
 class ConvolutionalPoolLayer:
     def __init__(self,filterMatrix) -> None:
@@ -100,6 +101,8 @@ def removeImageNoise(matrix):
 
 
 def main():
+    print('running...')
+    startTime = time.time()
     imageBrightnessMap = getBrightnessMap('peppa.jpg')
     
     np.set_printoptions(threshold=np.inf,linewidth=np.inf)
@@ -108,29 +111,25 @@ def main():
     verticalLayer = ConvolutionalPoolLayer(filters['VEdge'])
 
     horOutput = horizontalLayer.processData(imageBrightnessMap)
-    horOutput = horizontalLayer.processData(horOutput)
-    horOutput = horizontalLayer.processData(horOutput)
+    # horOutput = horizontalLayer.processData(horOutput)
+    # horOutput = horizontalLayer.processData(horOutput)
     # horOutput = horizontalLayer.processData(horOutput)
 
  
     verOutput = verticalLayer.processData(imageBrightnessMap)
-    verOutput = verticalLayer.processData(verOutput)   
-    verOutput = verticalLayer.processData(verOutput)   
+    # verOutput = verticalLayer.processData(verOutput)   
+    # verOutput = verticalLayer.processData(verOutput)   
     # verOutput = verticalLayer.processData(verOutput)   
 
-    combinedOutput = horOutput+verOutput
+    combinedOutput = np.sqrt(horOutput**2+verOutput**2) 
     combinedOutput = ((combinedOutput-combinedOutput.min())/(combinedOutput.max()-combinedOutput.min())).round(3)
     
     finalOutput = removeImageNoise(combinedOutput)
 
-    with open('output.txt', 'w') as f:
-        f.write(str(finalOutput))
-        f.close()
-
-    with open('unfiltered.txt','w') as f:
-        f.write(str(combinedOutput))
-        f.close()
-
+    img = Image.fromarray((finalOutput * 255).astype(np.uint8))
+    img.save("edges.png")
     
+    print(f'...finished in {round(time.time()-startTime,3)}s')
+
 if __name__ == '__main__':
     main()
