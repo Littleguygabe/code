@@ -1,4 +1,3 @@
-import numpy as np
 import random
 from dataclasses import dataclass
 from typing import Optional
