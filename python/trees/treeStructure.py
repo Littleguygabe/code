@@ -1,4 +1,5 @@
 import random
+from collections import deque
 from dataclasses import dataclass
 from typing import Optional
 
@@ -6,12 +7,12 @@ from typing import Optional
 class Tree:
     @dataclass
     class Node:
-        val:int
-        left:Optional['Tree.Node'] = None
-        right:Optional['Tree.Node'] = None
+        val: int
+        left: Optional['Tree.Node'] = None
+        right: Optional['Tree.Node'] = None
 
 
-    def __init__(self,depth) -> None:
+    def __init__(self, depth) -> None:
         self.depth = depth
         self.root = self.createTree()
 
@@ -30,22 +31,42 @@ class Tree:
 
         return root
 
-    def printTree(self,node=None, level=0):
-        if node is None:
-            node = self.root
-        print('  ' * level + f'Node(val={node.val})')
+    def printTree(self):
+        """
+        Prints the tree level by level (breadth-first traversal).
+        """
+        if not self.root:
+            print("Tree is empty.")
+            return
 
-        if node.left:
-            self.printTree(node.left, level + 1)
+        queue = deque([(self.root, 0)]) # Store (node, level)
+        current_level = 0
+        level_nodes = []
+
+        print("--- Tree Level by Level ---")
+        while queue:
+            node, level = queue.popleft()
+
+            if level > current_level:
+
+                print(f"{((self.depth-current_level)*2)*'  '}{(' '*(self.depth-current_level+1)).join(level_nodes)}")
+                current_level = level
+                level_nodes = []
+            
+            level_nodes.append(f"{node.val}")
+
+            if node.left:
+                queue.append((node.left, level + 1))
+            if node.right:
+                queue.append((node.right, level + 1))
         
-        if node.right:
-            self.printTree(node.right, level + 1)
+        # Print the last level
+        print(f"{((self.depth-current_level)*2)*'  '}{((self.depth-current_level+1)*' ').join(level_nodes)}")
 
 
 def main():
     testTree = Tree(3)
     testTree.printTree()
-
 
 
 if __name__ == '__main__':

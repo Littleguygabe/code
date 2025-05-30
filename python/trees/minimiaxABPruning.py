@@ -15,7 +15,7 @@ def minimax(position, depth, alpha, beta, maximisingPlayer):
             alpha = max(alpha, eval)
             if beta <= alpha:
                 print(f'pruned branch with val: {position.val} at depth: {depth}')
-                break  # prune
+                break  
         return maxEval
 
     else:
@@ -28,7 +28,7 @@ def minimax(position, depth, alpha, beta, maximisingPlayer):
             beta = min(beta, eval)
             if beta <= alpha:
                 print(f'pruned branch with val: {position.val} at depth: {depth}')
-                break  # prune
+                break  
         return minEval
 
 def main():
