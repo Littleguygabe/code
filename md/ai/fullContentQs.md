@@ -74,3 +74,48 @@ In the data set some 'NaN' values may exist which cannot be processed by the mac
 11. explain what overfitting is
 
 In terms of a model overfitting is when the model specialises to the training data rather than finding concrete relationships and generalising to the data, this means the model will perform well on seen data however when shown unseen data it will typically perform poorly in comparison to the training data
+
+12. Supervised learning tasks can broadly be divided into classification and regression. Explain the difference between these two tasks, mentioning whether each output is categorical or continuous
+
+The differnce between classification and regression is that classification is categorical whereas regression is continuous, this means that given a piece of input data classification will place it in a category, for example with predicting stock price it will classify the given stock to be in 1 of 3 categories - the value will either increase, stay the same or decrease - whereas regression on the other hand would predict how much the value of the stock will change rather than giving it a category.
+
+13. Explain the concept of lienar regression and how a linear regression function is typically represented mathematically and how does polynomial linear regression differ from simple linear regression.
+
+Linear regression is the idea that based on the training data an algorithm tries to plot a linear line function that can then be used to predict the output of an input data value based on the established linear relationship between the 2 components. Typically linear regression is represented as a graph with a function in the form of y = mx+c where y is the output value to be predicted and y is the output value. 
+
+polynomial linear regression differs from simple linear regression as simple linear regression can only plot a linear function and therefore can only accurately map linear relationships between inputs and an output, polynomial linear regression on the other hand has a higher order of magnitude and therefore can represent non-linear polynomial relationships making it more appropriate for more complex relationships with large numbers of paramaters.
+
+14. What is the mean squared error and how is it used in regression training and testing
+
+Mean sqaured error is a performance metric that is used to analyse the accuracy of a data model based on the output it predicted compared to the actual output value. Mean sqaured error is calculated by taking squaring the size of the error between the model predicted output and the actual output and then calculating the mean of every squared error value to get the average error size. By squaring the mean this results in the model becoming more senstive to larger errors than smaller errors which can therefore help optimise training speed as it adds greater encouragement to the model to establish a better fitting function to represent the relationship
+
+15. Discuss the pros and cons of linear regression
+
+Pros: 
+Fast training time - as the model is simple it will in turn have faster training times.
+Simpler to understand - as the model is simply producing a linear function that predicts an output based on a given input it means that the model is easier to interpret than highly complex models such as neural networks or deep decision trees.
+
+Cons:
+Can only plot linear relationships - as the function created is only a simple linear gradient function it means that it cannot plot more complex relationships such as that which can be predicted by polynomial regression models or neural networks.
+Sensitive to noise/outliers - as the model uses MSE this means that any major outliers will have a very strong influence on the size of the error for the model so as a result the model tries to minimise that by adjusting the gradient function however this then results in the general trend not being properly plotted as the model is trying to cover every scenario.
+
+16. for decision trees, describe the role of internal nodes, branches and leaf nodes
+
+In decision trees, the internal nodes represent evlautive statements/functions - ie if x>2 - and then the branches from a given node are the operators associated with that internal node, and then once the tree reaches a leaf node for a given data input the class/output associated with that leaf node is the final output of the system/classification of the input value
+
+17. list atleast 3 pros and 3 cons of decision trees
+
+Pros:
+easy to implement
+easy to interpret
+reasonable training time
+can handle a large number of features - unlike linear regression
+
+Cons:
+can only define simple decision boundaries
+an overly complex tree can result in overfitting to the training data
+cannot handle complex relationships
+problems with large amounts of missing data
+
+18. Explain the task of clustering in unsupervised learning, describe the steps involved in k-means clustering algorithm as outlined in the sources and provide 2 examples of clustering applications
+
