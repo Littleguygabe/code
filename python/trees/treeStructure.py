@@ -49,7 +49,7 @@ class Tree:
 
             if level > current_level:
 
-                print(f"{((self.depth-current_level)*2)*'  '}{(' '*(self.depth-current_level+1)).join(level_nodes)}")
+                print(f"{((self.depth-current_level)*2)*'  '}{('  '*(self.depth-current_level+1)).join(level_nodes)}")
                 current_level = level
                 level_nodes = []
             
@@ -61,7 +61,7 @@ class Tree:
                 queue.append((node.right, level + 1))
         
         # Print the last level
-        print(f"{((self.depth-current_level)*2)*'  '}{((self.depth-current_level+1)*' ').join(level_nodes)}")
+        print(f"{((self.depth-current_level)*2)*'  '}{((self.depth-current_level+1)*'  ').join(level_nodes)}")
 
 
 def main():

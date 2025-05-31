@@ -116,6 +116,3 @@ can only define simple decision boundaries
 an overly complex tree can result in overfitting to the training data
 cannot handle complex relationships
 problems with large amounts of missing data
-
-18. Explain the task of clustering in unsupervised learning, describe the steps involved in k-means clustering algorithm as outlined in the sources and provide 2 examples of clustering applications
-
