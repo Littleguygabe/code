@@ -62,7 +62,7 @@ def main():
     print('Initializing square rotation animation...')
 
 
-    rows, cols = 20, 40 
+    rows, cols = 50, 50 
     tdSpace = np.full((rows, cols), ' ')
 
     square_vertices = np.array([
@@ -75,7 +75,7 @@ def main():
     center_x = cols // 2
     center_y = rows // 2
 
-    scale = 6
+    scale = 10
 
     angle_degrees = 0
 
