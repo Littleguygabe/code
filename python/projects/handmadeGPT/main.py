@@ -5,17 +5,9 @@ import torch
 
 def main():
 
-    def getBatch(split):
-        data = trainData if split=='train' else valData #dictates which data to sample the tokens from 
-        ix = torch.randint(len(data)-blockSize,(batchSize,)) #gets a random index position to sample from, from the dataset that is being used
-        # has -blockSize so that we don't get index out of range issues
-        # batchSize arg dictates the number of random nums that are generated 
-
-        x = torch.stack([data[i:i+blockSize] for i in ix]) #creates a torch stack of the input sample data for each random position generated in ix
-        y = torch.stack([data[i+1:i+blockSize+1] for i in ix]) #gets the next token for each of the input positions so we can analyse the context
-        # ^^^ the y allows us to compare the predicted output to the actual output of the system
-
-        return x,y
+    trainSize = 0.9
+    blockSize = 8 #the number of tokens that are gathered for each sample -> context length
+    batchSize = 4 #how many independent sequences will we process in parallel
 
 
 
@@ -37,15 +29,22 @@ def main():
     data = torch.tensor(encode(text),dtype=torch.long)
 
     #create the train test split
-    trainSize = 0.9
     n = int(trainSize*len(data))
     trainData = data[:n]
     valData = data[n:]
 
-    blockSize = 8 #the number of tokens that are gathered for each sample -> context length
-    batchSize = 4 #how many independent sequences will we process in parallel
+    def getBatch(split):
+        data = trainData if split=='train' else valData #dictates which data to sample the tokens from 
+        ix = torch.randint(len(data)-blockSize,(batchSize,)) #gets a random index position to sample from, from the dataset that is being used
+        # has -blockSize so that we don't get index out of range issues
+        # batchSize arg dictates the number of random nums that are generated 
 
-    print(getBatch('test'))
+        x = torch.stack([data[i:i+blockSize] for i in ix]) #creates a torch stack of the input sample data for each random position generated in ix
+        y = torch.stack([data[i+1:i+blockSize+1] for i in ix]) #gets the next token for each of the input positions so we can analyse the context
+        # ^^^ the y allows us to compare the predicted output to the actual output of the system
+
+        return x,y
+
 
 if __name__ == '__main__':
     main()
