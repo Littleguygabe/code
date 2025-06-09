@@ -9,15 +9,20 @@ class BigramLanguageModel(nn.Module):
         super().__init__()
         self.token_embedding_table = nn.Embedding(vocabSize,vocabSize)
 
-    def forward(self,idx,targets):
+    def forward(self,idx,targets=None):
         logits = self.token_embedding_table(idx) # returns in format of (Batch,time,channel)
 
-        B,T,C = logits.shape
-        logits = logits.view(B*T,C) #converts the logits matrix to be a vector that can be used by the cross entropy function
+        if targets==None:
+            loss = None
+        
+        else:
 
-        targets = targets.view(B*T)
+            B,T,C = logits.shape
+            logits = logits.view(B*T,C) #converts the logits matrix to be a vector that can be used by the cross entropy function
 
-        loss = F.cross_entropy(logits,targets)
+            targets = targets.view(B*T)
+
+            loss = F.cross_entropy(logits,targets)
         # measures the quality of the logits with respect to the target character
 
         return logits,loss
@@ -42,3 +47,5 @@ logits,loss = m(xb,yb)
 print(logits.shape)
 print(loss)
 
+idx = torch.zeros((1,1),dtype=torch.long)
+print(decode(m.generate(idx,maxNewTokens=100)[0].tolist()))
