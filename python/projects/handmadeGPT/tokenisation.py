@@ -1,5 +1,6 @@
 import torch
 
+torch.manual_seed(1337)
 trainSize = 0.9
 blockSize = 8 #the number of tokens that are gathered for each sample -> context length
 batchSize = 4 #how many independent sequences will we process in parallel
