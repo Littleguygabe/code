@@ -4,6 +4,13 @@ import torch.nn as nn
 from torch.nn import functional as F
 torch.manual_seed(1337)
 
+
+
+# bigram model only looks at the previous token to choose which token to produce next rather than looking at a bunch of the previous tokens
+# so not the most intelligent system
+
+
+
 class BigramLanguageModel(nn.Module):
     def __init__(self, vocabSize) -> None:
         super().__init__()
@@ -33,7 +40,7 @@ class BigramLanguageModel(nn.Module):
             logits = logits[:,-1,:]
             probs = F.softmax(logits,dim=-1)
             idxNext = torch.multinomial(probs,num_samples=1)
-            idx = torch.cat((*idx,idxNext),dim=1)
+            idx = torch.cat((idx,idxNext),dim=1)
 
         return idx
 
