@@ -51,8 +51,19 @@ m = BigramLanguageModel(vocabSize)
 xb,yb = getBatch('train')
 
 logits,loss = m(xb,yb)
-print(logits.shape)
-print(loss)
+setBatchSize(32)
 
-idx = torch.zeros((1,1),dtype=torch.long)
-print(decode(m.generate(idx,maxNewTokens=100)[0].tolist()))
+optimiser = torch.optim.AdamW(m.parameters(),lr=1e-3)
+
+for steps in range(10000):
+    xb,yb = getBatch('train')
+
+    logits,loss = m(xb,yb)
+    optimiser.zero_grad(set_to_none=True)
+    loss.backward()
+    optimiser.step()
+
+print(loss.item())
+print(decode(m.generate(torch.zeros((1,1),dtype=torch.long),maxNewTokens=100)[0].tolist()))
+
+
