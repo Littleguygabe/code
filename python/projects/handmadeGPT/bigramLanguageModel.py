@@ -64,6 +64,9 @@ for steps in range(10000):
     optimiser.step()
 
 print(loss.item())
-print(decode(m.generate(torch.zeros((1,1),dtype=torch.long),maxNewTokens=100)[0].tolist()))
 
+
+with open('output.txt','w') as f:
+    f.write(decode(m.generate(torch.zeros((1,1),dtype=torch.long),maxNewTokens=100)[0].tolist()))
+    f.close()
 
