@@ -67,6 +67,6 @@ print(loss.item())
 
 
 with open('output.txt','w') as f:
-    f.write(decode(m.generate(torch.zeros((1,1),dtype=torch.long),maxNewTokens=100)[0].tolist()))
+    f.write(decode(m.generate(torch.zeros((1,1),dtype=torch.long),maxNewTokens=1000)[0].tolist()))
     f.close()
 
